@@ -19,7 +19,7 @@ Laravel auto-discovers the package. No manual provider registration needed.
 Add your API key to `.env`:
 
 ```env
-PREDICTOR_API_KEY=your_api_key_here
+PREDICTORAPI_KEY=your_api_key_here
 ```
 
 ---
