@@ -1,0 +1,33 @@
+{
+    "name": "predictorapi/laravel-client",
+    "description": "Laravel package for Predictor API - call your predictors fluently",
+    "keywords": ["predictor", "api", "laravel", "predictorapi", "helper", "predict"],
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Predictor API",
+            "email": "support@predictorapi.com"
+        }
+    ],
+    "require": {
+        "php": ">=8.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "PredictorAPI\\Client\\": "src/"
+        },
+        "files": [
+            "src/Helpers/predict.php"
+        ]
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "PredictorAPI\\Client\\ClientServiceProvider"
+            ]
+        }
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
+}
