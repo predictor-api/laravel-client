@@ -29,34 +29,25 @@ PREDICTOR_API_KEY=your_api_key_here
 ### Backend
 
 ```php
-use function PredictorAPI\Client\predict;
-
 $result = predict('valid-iban', ['iban' => 'NL91ABNA0417164300']);
 ```
 
 ### Frontend Proxy
 
-POST to Laravel route `/api/predict/{predictor}`:
+Add a route like this in your routes/web.php or routes/api.php
 
-```js
-const res = await fetch('/api/predict/valid-iban', {
-  method: 'POST',
-  headers: { 'Content-Type': 'application/json' },
-  body: JSON.stringify({ iban: 'NL91ABNA0417164300' })
-});
-const result = await res.json();
+
+```php
+use PredictorAPI\Client\Http\Controllers\ProxyController;
+
+Route::post('/predict/{predictor}', [ProxyController::class, 'predict']);
 ```
+
+POST to Laravel route `/api/predict/{predictor}`:
 
 - Works with Blade, Vue, React, Alpine, Livewire.  
 - API key stays backend-only.
-
----
-
-## Routes
-
-- `POST /api/predict/{predictor}`  
-- `{predictor}` = PredictorAPI name  
-- Body = JSON payload matching the predictor inputs
+- All your middlewere, authentication can be applied.
 
 ---
 

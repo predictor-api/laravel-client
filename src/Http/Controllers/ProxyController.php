@@ -5,7 +5,7 @@ namespace PredictorAPI\Client\Http\Controllers;
 use Illuminate\Http\Request;
 use PredictorAPI\Client\Client;
 
-class ProxyController extends Controller
+class ProxyController
 {
     public function predict(string $predictor, Request $request, Client $client)
     {
